@@ -13,15 +13,16 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
+          package-manager-cache: false
 
       - name: Build Package
         run: |
@@ -31,7 +32,7 @@ jobs:
           corepack yarn@1.22.22 pack --filename koishi-plugin-redis.tgz
         shell: bash
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: koishi-plugin-redis-${{ github.sha }}
           path: koishi-plugin-redis.tgz
