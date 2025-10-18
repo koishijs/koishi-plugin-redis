@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-redis",
-  "packageManager": "yarn@4.9.1",
+  "packageManager": "yarn@4.9.4",
   "version": "1.0.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
